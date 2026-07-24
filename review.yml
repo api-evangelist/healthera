@@ -1,0 +1,149 @@
+aid: healthera
+name: Healthera
+review:
+  question: Does Healthera expose a public, documented developer API, OpenAPI spec, or FHIR CapabilityStatement?
+  answer: false
+  date: '2026-07-24'
+  reviewer: API Evangelist
+  homeMarket: United Kingdom
+findings:
+  summary: |
+    Healthera is a UK digital-health / patient-engagement company (founded 2015,
+    Cambridge, England) operating a consumer pharmacy app + website and a
+    pharmacy-facing SaaS "Patient Experience Platform" used by 1,700+ community
+    pharmacies. In November 2022 it became the first pharmacy app to integrate with
+    the NHS Electronic Prescription Service (EPS). As of this review Healthera
+    publishes NO public developer portal, NO self-serve API documentation, and NO
+    machine-readable API contract. The developer/docs/fhir subdomains do not
+    resolve. The api.healthera.co.uk "Healthera Core" host is a private backend: it
+    returns a generic {"data":[]} body for /metadata, /.well-known/smart-configuration,
+    /openapi.json, /swagger.json and every other probed path, so it is a catch-all
+    private service, NOT a FHIR server and NOT a documented public API. Healthera's
+    marketing references "custom APIs" for pharmacy/brand partners, but integration
+    is partner-gated, not publicly documented. No specs or CapabilityStatements were
+    harvested because none exist publicly.
+  developerPortal:
+    url: ""
+    status: none
+    note: >-
+      No public developer portal found. Probed developer.healthera.co.uk (000/DNS
+      no-resolve), docs.healthera.co.uk (000), fhir.healthera.co.uk (000),
+      healthera.co.uk/developers (404), healthera.co.uk/api (404),
+      healthera.co.uk/interoperability (404). The only developer-adjacent public
+      page is healthera.co.uk/integrations, a business partnerships page with no
+      API documentation.
+  fhirCapabilityStatement:
+    captured: false
+    fhirVersion: null
+    resources: []
+    note: >-
+      api.healthera.co.uk/metadata returns {"data":[]} (HTTP 200,
+      application/json) - a private catch-all response, not a FHIR
+      CapabilityStatement. No FHIR base URL, FHIR version, or resource list is
+      published.
+  smartOnFhir:
+    captured: false
+    note: >-
+      api.healthera.co.uk/.well-known/smart-configuration returns {"data":[]} (HTTP
+      200) - the same private catch-all, not a real SMART-on-FHIR discovery
+      document. No SMART scopes are published.
+  downloadableSpecs:
+    count: 0
+    provenance: []
+    note: >-
+      /openapi.json, /openapi.yaml, /swagger.json, /v1/openapi.json, /api-docs on
+      api.healthera.co.uk all return HTTP 200 with the {"data":[]} catch-all body -
+      none parse as an OpenAPI/Swagger document (no openapi/swagger key, no paths).
+      No spec saved verbatim.
+  authModel:
+    scheme: unknown-partner-gated
+    note: >-
+      No public auth documentation. Integration with NHS Spine services (EPS) is
+      governed by NHS Digital assurance; partner integrations appear to be
+      arranged directly with Healthera. No public OAuth2 / SMART-on-FHIR / API-key
+      documentation was found.
+  standardsConformance:
+    usCore: false
+    ukCore: false
+    auCore: false
+    daVinci: false
+    carin: false
+    note: >-
+      No published conformance to US Core / UK Core / AU Core / Da Vinci / CARIN.
+      Healthera integrates with NHS national services (Electronic Prescription
+      Service) as a downstream consumer but does not publish a conformant public
+      FHIR surface of its own.
+  gating: partner-gated
+  selfServe: false
+probes:
+  - url: https://healthera.co.uk/
+    status: 200
+    note: Corporate + patient site (Healthera Core marketing).
+  - url: https://api.healthera.co.uk/
+    status: 200
+    note: Returns "<h1>Healthera Core</h1>" - private backend host.
+  - url: https://api.healthera.co.uk/metadata
+    status: 200
+    note: '{"data":[]} catch-all - NOT a FHIR CapabilityStatement.'
+  - url: https://api.healthera.co.uk/.well-known/smart-configuration
+    status: 200
+    note: '{"data":[]} catch-all - NOT a SMART-on-FHIR configuration.'
+  - url: https://api.healthera.co.uk/openapi.json
+    status: 200
+    note: '{"data":[]} catch-all - does not parse as OpenAPI.'
+  - url: https://api.healthera.co.uk/swagger.json
+    status: 200
+    note: '{"data":[]} catch-all - does not parse as Swagger.'
+  - url: https://developer.healthera.co.uk/
+    status: 000
+    note: DNS does not resolve - no developer portal.
+  - url: https://docs.healthera.co.uk/
+    status: 000
+    note: DNS does not resolve.
+  - url: https://fhir.healthera.co.uk/
+    status: 000
+    note: DNS does not resolve - no FHIR host.
+  - url: https://healthera.co.uk/developers
+    status: 404
+  - url: https://healthera.co.uk/api
+    status: 404
+  - url: https://healthera.co.uk/interoperability
+    status: 404
+  - url: https://healthera.co.uk/integrations
+    status: 200
+    note: Business partnerships page (myGP, eConsult, NHS Digital EPS, Cegedim Rx, Medpoint, Royal Mail, Uber Eats). No API docs.
+  - url: https://healthera.co.uk/blog/
+    status: 200
+  - url: https://github.com/healthera
+    status: 200
+    note: '"Healthera - GitHub" organization exists.'
+transports:
+  - protocol: REST
+    scheme: https
+    baseURL: https://api.healthera.co.uk
+    documented: false
+    note: Private "Healthera Core" backend; no public documentation, no published contract.
+  - protocol: FHIR
+    scheme: https
+    documented: false
+    note: No FHIR CapabilityStatement, base URL, or version published.
+  - protocol: WebSocket
+    scheme: wss
+    documented: false
+    note: No WebSocket surface documented.
+sources:
+  - url: https://healthera.co.uk/
+    type: Website
+    note: Company/patient homepage.
+  - url: https://healthera.co.uk/integrations
+    type: Documentation
+    note: Partner integrations (business, not technical); references NHS Digital EPS integration.
+  - url: https://healthera.co.uk/want-to-know-how-to-build-your-own-pharmacy-app/
+    type: Blog
+    note: References internal custom APIs and 12 NHS/third-party integrations; no public developer resources.
+  - url: https://en.wikipedia.org/wiki/Healthera
+    type: Reference
+    note: Founding 2015 Cambridge; first pharmacy app on NHS EPS (Nov 2022); Uber same-hour delivery (Jan 2024).
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

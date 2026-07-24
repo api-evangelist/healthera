@@ -1,0 +1,57 @@
+aid: healthera
+url: https://raw.githubusercontent.com/api-evangelist/healthera/refs/heads/main/apis.yml
+name: Healthera
+kind: company
+description: >-
+  Healthera is a United Kingdom digital-health and patient-engagement company,
+  founded in 2015 by Cambridge University students and headquartered in Cambridge,
+  England. It runs a patient-facing pharmacy app and website for ordering NHS
+  prescriptions and medicines online and booking pharmacy services (Pharmacy First,
+  treatments, vaccinations), alongside a pharmacy-facing SaaS "Patient Experience
+  Platform" used by 1,700+ community pharmacies to manage repeat prescriptions,
+  bookings, marketing, and delivery. In November 2022 Healthera became the first
+  pharmacy app to integrate with the NHS Electronic Prescription Service (EPS), and
+  it connects to NHS Digital / NHS England systems plus third-party platforms such
+  as myGP, eConsult, Cegedim Rx Pharmacy Manager, Medpoint, Royal Mail, and Uber for
+  same-hour delivery. Healthera markets custom integration APIs to pharmacy and
+  brand partners, but as of this review it publishes no public developer portal, no
+  self-serve API documentation, and no machine-readable contract; its api.healthera.co.uk
+  "Healthera Core" host is a private backend and exposes no FHIR CapabilityStatement.
+  Integration is partner-gated rather than self-serve.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Healthcare
+- United Kingdom
+- Pharmacy
+- Patient Engagement
+- e-Prescribing
+- NHS
+- Electronic Prescription Service
+- Digital Health
+- Telehealth
+created: '2026-07-24'
+modified: '2026-07-24'
+specificationVersion: '0.19'
+apis: []
+common:
+- type: Website
+  url: https://healthera.co.uk/
+- type: Blog
+  url: https://healthera.co.uk/blog/
+- type: BlogRSS
+  url: https://healthera.co.uk/blog/feed/
+- type: Integrations
+  url: https://healthera.co.uk/integrations
+- type: Support
+  url: https://healthera.co.uk/contact/
+- type: GitHubOrganization
+  url: https://github.com/healthera
+- type: TermsOfService
+  url: https://healthera.co.uk/pharmacy-terms
+- type: PrivacyPolicy
+  url: https://healthera.co.uk/privacy
+- type: Cookies
+  url: https://healthera.co.uk/cookies
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
