@@ -1,0 +1,26 @@
+# Healthera
+
+> Healthera is a United Kingdom digital-health and patient-engagement company (founded 2015, Cambridge, England). It runs a patient-facing pharmacy app and website for ordering NHS prescriptions and booking pharmacy services, plus a pharmacy-facing SaaS "Patient Experience Platform" used by 1,700+ community pharmacies. In November 2022 it became the first pharmacy app to integrate with the NHS Electronic Prescription Service (EPS).
+
+## API status
+
+> As of the API Evangelist review (2026-07-24) Healthera publishes NO public developer portal, NO self-serve API documentation, and NO machine-readable API contract (OpenAPI/Swagger/FHIR CapabilityStatement/AsyncAPI). Integration with pharmacy and brand partners is partner-gated and arranged directly, not self-serve. The `api.healthera.co.uk` "Healthera Core" host is a private backend that returns a generic `{"data":[]}` catch-all for `/metadata`, `/.well-known/*`, `/openapi.json`, `/swagger.json` and every other probed path — it is not a FHIR server and not a documented public API.
+
+## Company
+
+- [Website](https://healthera.co.uk/): Corporate and patient site.
+- [Integrations](https://healthera.co.uk/integrations): Partner integrations page (myGP, eConsult, NHS Digital EPS, Cegedim Rx, Medpoint, Royal Mail, Uber) — business partnerships, no API documentation.
+- [Blog](https://healthera.co.uk/blog/): Company blog.
+- [Contact / Support](https://healthera.co.uk/contact/): Contact page.
+- [GitHub](https://github.com/healthera): Healthera GitHub organization.
+
+## Legal
+
+- [Pharmacy Terms](https://healthera.co.uk/pharmacy-terms)
+- [Privacy Policy](https://healthera.co.uk/privacy)
+- [Cookies](https://healthera.co.uk/cookies)
+
+## Notes
+
+- No OpenAPI, GraphQL, MCP server, SDK/package, or published `.well-known` discovery document exists for Healthera at review time.
+- NHS Electronic Prescription Service integration is governed by NHS Digital assurance; Healthera is a downstream consumer of NHS national services, not a publisher of a conformant public FHIR surface.

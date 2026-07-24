@@ -34,6 +34,10 @@ modified: '2026-07-24'
 specificationVersion: '0.19'
 apis: []
 common:
+- type: DomainSecurity
+  url: security/healthera-domain-security.yml
+- type: LLMsTxt
+  url: llms/healthera-llms.txt
 - type: Website
   url: https://healthera.co.uk/
 - type: Blog
