@@ -1,4 +1,4 @@
-# Healthera (healthera)
+# Healthera
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,45 +64,84 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Healthera is a United Kingdom digital-health and patient-engagement company, founded in 2015 in Cambridge, England. It runs a patient-facing pharmacy app and website for ordering NHS prescriptions and booking pharmacy services, plus a pharmacy-facing SaaS "Patient Experience Platform" used by 1,700+ community pharmacies. In November 2022 it became the first pharmacy app to integrate with the NHS Electronic Prescription Service (EPS).
+Healthera is a United Kingdom digital-health and patient-engagement company, founded in 2015 by Cambridge University students and headquartered in Cambridge, England. It runs a patient-facing pharmacy app and website for ordering NHS prescriptions and medicines online and booking pharmacy services (Pharmacy First, treatments, vaccinations), alongside a pharmacy-facing SaaS "Patient Experience Platform" used by 1,700+ community pharmacies to manage repeat prescriptions, bookings, marketing, and delivery. In November 2022 Healthera became the first pharmacy app to integrate with the NHS Electronic Prescription Service (EPS), and it connects to NHS Digital / NHS England systems plus third-party platforms such as myGP, eConsult, Cegedim Rx Pharmacy Manager, Medpoint, Royal Mail, and Uber for same-hour delivery. Healthera markets custom integration APIs to pharmacy and brand partners, but as of this review it publishes no public developer portal, no self-serve API documentation, and no machine-readable contract; its api.healthera.co.uk "Healthera Core" host is a private backend and exposes no FHIR CapabilityStatement. Integration is partner-gated rather than self-serve.
 
-Healthera markets custom integration APIs to pharmacy and brand partners, but publishes **no public developer portal, no self-serve API documentation, and no machine-readable API contract** (no OpenAPI, no FHIR CapabilityStatement). Its `api.healthera.co.uk` "Healthera Core" host is a private backend; integration is partner-gated. This profile is therefore an honest identity stub with no documented public API catalogued.
+**Areas:** Healthcare · United Kingdom · Pharmacy · Patient Engagement · e-Prescribing · NHS · Electronic Prescription Service · Digital Health · Telehealth
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/healthera/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/healthera/refs/heads/main/apis.yml)
+## Healthera on APIs.io
 
-## Tags
+Everything profiled for Healthera is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/healthera/](https://apis.io/providers/healthera/)** — or go straight to one of the APIs or properties below.
 
-- Healthcare
-- United Kingdom
-- Pharmacy
-- Patient Engagement
-- e-Prescribing
-- NHS
-- Electronic Prescription Service
-- Digital Health
-- Telehealth
+### Published properties
 
-## Timestamps
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- **Created:** 2026-07-24
-- **Modified:** 2026-07-24
+#### Security (1)
 
-## APIs
+Authentication, trust centre, and vulnerability disclosure.
 
-No public, self-serve, documented API was found at review time. Healthera's integrations (NHS EPS, myGP, eConsult, Cegedim Rx, Medpoint, Royal Mail, Uber) are delivered through partner-gated arrangements, not a public developer program.
+- [Healthera Domain Security](https://apis.io/security/healthera/healthera-domain-security/)
 
-## Common Properties
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://healthera.co.uk/)
-- [Blog](https://healthera.co.uk/blog/)
-- [Integrations](https://healthera.co.uk/integrations)
 - [Support](https://healthera.co.uk/contact/)
-- [GitHub Organization](https://github.com/healthera)
-- [Terms of Service](https://healthera.co.uk/pharmacy-terms)
-- [Privacy Policy](https://healthera.co.uk/privacy)
-- [Cookies](https://healthera.co.uk/cookies)
+- [Blog](https://healthera.co.uk/blog/)
+- [Terms of service](https://healthera.co.uk/pharmacy-terms)
+- [Privacy policy](https://healthera.co.uk/privacy)
+- [GitHub](https://github.com/healthera)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 11.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 21.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.9** — Health
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/healthera/](https://apis.io/providers/healthera/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Healthera: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/healthera/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
